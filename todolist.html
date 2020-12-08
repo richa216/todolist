@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style>
+		body
+		{
+				background-color: grey;
+				text-align: center;
+		}
+		ul
+		{
+			/*list-style: none*/;
+		}
+		#edit
+		{
+			cursor: pointer;
+		}
+		li
+		{
+			cursor: pointer;
+		
+			color: black;
+		}
+		h1
+		{
+			color: white;
+		}
+
+
+
+
+		.
+	</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mylist ;
+   
+
+ 
+$(document).ready(function()
+     {
+     	
+     	var i=0;
+
+   $('button').click(function() 
+   {
+
+    mylist = $('#input').val();
+    //inp1 = '<input type="text" id="v-'+i+'">';
+    //btn1 ='<button id="edit">'+'edit'+'</button>';
+    if(mylist!='')
+    	{
+            i++;
+           
+    		$('#list').append('<li contenteditable="true">'+ mylist+'</li>'+'<br>');
+
+     return false;
+        }
+    else
+    {
+    	alert('add your task')
+    }
+});
+
+  
+$(document).on('dblclick','li',function()
+{
+	var a = $(this).remove();
+	$('#list1').append(a);
+})
+
+$("#list1").click(function()
+{
+	$(this).remove();
+})
+
+
+$(document).on('click','button',function()
+{
+	$(this).append('mylist')
+})
+});
+
+  // var new date = date().toLocalDateString()
+  // $("#hee").html = date;
+
+
+
+
+
+</script>
+</head>
+<body>
+	<h1 style="color: orange;">TO DO LIST</h1>
+	<h3 id="hee">Click on the added element to add your task in doneZone and give a Doubleclick to delte your task</h3>
+<form>
+   <input type="text" name="task" id="input">
+   <button>Submit</button>
+<br>
+<h1 id="he">ToDo</h1>
+<ol id="list">
+	
+</ol>
+<h1>Done</h1>
+<ol id="list1">
+	
+	
+</ol>
+    </form>
+</body>
+</html>
