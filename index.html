@@ -92,16 +92,22 @@ $(document).on('dblclick','li',function()
 {
 	var a = $(this).remove();
 	$('#list1').append(a);
-})
 
-$("#list1").click(function()
+})
+	$(document).on('click','#list1 li',function()
 {
 	$(this).remove();
+	alert('hurray!!!!...........task done');
 })
+
+
+
+
 
 $(document).on('click','button',function()
 {
 	$(this).append('mylist')
+
 })
 });
 
@@ -118,18 +124,23 @@ $(document).on('click','button',function()
 	<h1 style="color: orange;">TO DO LIST</h1>
 	<h3 id="hee">Click on the added element to add your task in doneZone and give a Doubleclick to delete your task</h3>
 <form>
-   <input type="text" name="task" id="input">
+   <input type="text" name="task" id="input" placeholder="add your task">
    <button>ADD<i class="fa fa-plus" style="font-size:15px"></i></button>
 <br>
 <h1 id="he">ToDo</h1>
+
 <ol id="list">
 	
 </ol>
+
+
 <h1>Done</h1>
+
+
 <ol id="list1">
-	
-	
 </ol>
+
+
     </form>
 </body>
 </html>
